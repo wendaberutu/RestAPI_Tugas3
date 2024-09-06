@@ -172,6 +172,10 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&d
                   <p>To do List</p>
                 </a>
               </li>
+              <a href="{{ route('logout') }}" class="nav-link">
+                {{-- <i class="far fa-circle nav-icon"></i> --}}
+                <p>Logout</p>
+              </a>
             </ul>
           </li>
           

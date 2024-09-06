@@ -12,7 +12,7 @@ Route::get('/', function () {
 // login 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'loginProses'])->name('login_proses');
-
+Route::get('/logout',[AuthController::class,'logout']) -> name('logout');
 // task to do 
 Route::get('/todo', [TaskController::class, 'index'])->name('todo');
 Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
