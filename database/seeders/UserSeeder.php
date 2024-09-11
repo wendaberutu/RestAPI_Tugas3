@@ -14,7 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::truncate();
         User::create([
             'name'=> 'wenda berutu',
             'level'=>'admin',
@@ -22,5 +21,14 @@ class UserSeeder extends Seeder
             'password'=>bcrypt('12345'),
             'remember_token'=>Str::random(60),
         ]);
+        
+        User::create([
+            'name' => 'Customer User',
+            'level' => 'customer',
+            'email' => 'customer@example.com',
+            'password' => bcrypt('customer123'),
+            'remember_token' => Str::random(60),
+        ]);
+        
     }
 }
