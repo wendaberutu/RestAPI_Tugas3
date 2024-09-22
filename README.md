@@ -1,44 +1,23 @@
-# Web to do list dan autentifikasi login, logout dengan laravel
-ini adalah website sederhana untuk memenuhi tugas kuliah Rest API 
+## Wenda Beuruyu (215314190)
+# Tugas Rest API CLint Dan Server untuk Todo list 
 
-## Fitur 
+## Dokumentsi ResTFUll Api denga open API
+### saya membuat dokumentasi di folder sendiri di Docs/openAPItodo.json
 
-** landing page** 
-ini berisi informasi peribadi penulis dan tampilan untuk login 
+![image](https://github.com/user-attachments/assets/5e93c592-d274-4e76-8aa4-0a52756b1b9c)
 
-** Autenifikasi Penggunaa** 
-- pengguna dapat login dan logout dengan menggunakan email dan password
-- rute yng dilindungi yang hanya dapat di akses oleh pengguna yang sudah login
-
-** Manajement TO-Do List** 
-- menambahkan tugas baru
-- menandai tugas selesai
-- menghapus tugas
-
-  ### instalasi
-1. buat project baru di laravel dengan nama project dengan code berikut '
-   composer create-project --prefer-dist laravel/laravel nama-proyek-anda
-2. design landing page anda
-   ![image](https://github.com/user-attachments/assets/18514ee6-581d-4716-88ec-e79a461537a8)
-
-4. design login dan logout dengan controler
-   **auth controler untuk login dan logout
-   ![image](https://github.com/user-attachments/assets/13734327-1666-4698-a717-65b4470be0b2)
-
-   ** buat seeder untuk database login agar bisa memasukkan email dan password
-   ![image](https://github.com/user-attachments/assets/4de7a763-9e99-44fa-8bd6-0bc54c7b8661)
-
-   tampilan login
-   ![image](https://github.com/user-attachments/assets/16f7fb3f-b445-4a9b-be6f-4553fa67ea2f)
-
-5. buat halaman home setelah login
-   ![image](https://github.com/user-attachments/assets/a8297599-fa19-4391-bd58-4caa80184df1)
-
-6. buat controller untuk task( to do list )
-   ![image](https://github.com/user-attachments/assets/4091f7f2-f618-48ea-b7d5-143a3d3a21c8)
-
-   **tampilan to do list
-   ![image](https://github.com/user-attachments/assets/6f3aa79d-3361-4de2-b41a-8ec523ff7e69)
+#### Get Todo 
+![image](https://github.com/user-attachments/assets/0d433a8f-563a-4b10-869c-5e14f030e6bc)
+#### Post Todo ( membuat todo baru ) 
+![image](https://github.com/user-attachments/assets/2138af09-0e10-4c2d-bef9-4aa9a891445d)
+#### menampilkan Get berdasarkan ID 
+![image](https://github.com/user-attachments/assets/1e4c8c37-dd9e-4513-8a81-f08164139f7e)
+#### memperbaharui todo
+![image](https://github.com/user-attachments/assets/7dd7331e-e284-4902-b6c6-1341994ba37c)
+#### menghapus berdasarkan ID 
+![image](https://github.com/user-attachments/assets/bca03b46-8e2a-499a-917b-ab7b0f2f3c2a)
 
 
-   
+
+
+
