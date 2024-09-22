@@ -9,4 +9,10 @@ class Task extends Model
 {
     protected $fillable = ['name', 'completed'];
     use HasFactory;
+
+
+    // // Cast field 'completed' sebagai boolean
+    // protected $casts = [
+    //     'completed' => 'boolean',
+    // ];
 }

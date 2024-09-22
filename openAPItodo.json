@@ -1,0 +1,202 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Todo API",
+      "description": "API untuk mengelola Todo List",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://127.0.0.1:8000"
+      }
+    ],
+    "paths": {
+      "/todos": {
+        "get": {
+          "summary": "Mendapatkan daftar todos",
+          "responses": {
+            "200": {
+              "description": "Berhasil menampilkan todos",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/Task"
+                        }
+                      },
+                      "errors": {
+                        "type": "null"
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Menambahkan todo baru",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 255
+                    },
+                    "completed": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": ["name"]
+                }
+              }
+            },
+            "responses": {
+              "201": {
+                "description": "Data Todo berhasil ditambahkan",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Task"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/todos/{id}": {
+        "get": {
+          "summary": "Menampilkan todo berdasarkan ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID dari todo yang ingin ditampilkan",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Berhasil menampilkan todo",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Todo tidak ditemukan"
+            }
+          }
+        },
+        "put": {
+          "summary": "Memperbarui todo berdasarkan ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID dari todo yang ingin diperbarui",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": false,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 255
+                    },
+                    "completed": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Todo berhasil diperbarui",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Task"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Todo tidak ditemukan"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Menghapus todo berdasarkan ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID dari todo yang ingin dihapus",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Todo berhasil dihapus"
+            },
+            "404": {
+              "description": "Todo tidak ditemukan"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Task": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            }
+          },
+          "required": ["id", "name", "completed"]
+        }
+      }
+    }
+  }
+  
