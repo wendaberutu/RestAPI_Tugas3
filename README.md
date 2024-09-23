@@ -18,6 +18,9 @@
 ![image](https://github.com/user-attachments/assets/bca03b46-8e2a-499a-917b-ab7b0f2f3c2a)
 
 
+# setelah membuat dokumentasi menggunakan Open API maka buat lah API untuk Client 
+
+### berikut langkah-langkah membuat API 
 
 
 
