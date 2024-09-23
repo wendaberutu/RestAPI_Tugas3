@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $fillable = ['name', 'completed'];
     use HasFactory;
 
+    protected $fillable = ['name', 'completed'];
 
-    // // Cast field 'completed' sebagai boolean
-    // protected $casts = [
-    //     'completed' => 'boolean',
-    // ];
+    // Jika ingin, aktifkan casting untuk kolom completed
+    protected $casts = [
+        'completed' => 'boolean',
+    ];
 }
+

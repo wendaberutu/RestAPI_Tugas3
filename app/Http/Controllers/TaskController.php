@@ -9,26 +9,30 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all(); // Mengambil semua tugas dari database
-        return view('todo', compact('tasks')); // Mengirimkan data tugas ke view
+        $tasks = Task::all();
+        return view('todo', compact('tasks'));
     }
 
     public function store(Request $request)
     {
         $request->validate(['name' => 'required']);
-        Task::create(['name' => $request->name]);
-        return redirect()->back();
+        Task::create([
+            'name' => $request->name,
+            'completed' => false, // Set default status
+        ]);
+        return redirect()->back()->with('success', 'Tugas berhasil ditambahkan!');
     }
 
     public function complete(Task $task)
     {
         $task->update(['completed' => true]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Tugas berhasil ditandai selesai!');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Tugas berhasil dihapus!');
     }
 }
+

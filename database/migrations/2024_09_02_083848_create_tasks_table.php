@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('completed');
+            $table->boolean('completed')-> default(true);
             $table->timestamps();
         });
     }
