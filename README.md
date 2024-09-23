@@ -1,4 +1,4 @@
-## Wenda Beuruyu (215314190)
+## Wenda Beurutu (215314190)
 # Tugas Rest API CLint Dan Server untuk Todo list 
 
 ## Dokumentsi ResTFUll Api denga open API
