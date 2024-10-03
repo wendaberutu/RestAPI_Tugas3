@@ -9,10 +9,20 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
-// login 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [AuthController::class, 'loginProses'])->name('login_proses');
-Route::get('/logout',[AuthController::class,'logout']) -> name('logout');
+// Registration routes
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register.post');
+
+// Login routes
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login_proses');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// OTP verification routes
+Route::get('/verify-otp', [AuthController::class, 'showVerifyOtpForm'])->name('auth.verifyOtp');
+Route::post('/verify-otp', [AuthController::class, 'verifyOtp'])->name('auth.verifyOtp.post');
+
+
 
 // task to do 
 Route::middleware(['auth', 'adminMid'])->group(function () {
