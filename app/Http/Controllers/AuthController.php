@@ -65,7 +65,7 @@ class AuthController extends Controller
     public function sendOtpWhatsApp($phone, $otp)
     {
         $apiKey = env('FONTE_API_KEY');
-        $url = "https://api.fonnte.com/send"; // Gantilah dengan URL API Fonte yang sesuai
+        $url = "https://api.fonnte.com/send"; 
 
         $curl = curl_init();
 
